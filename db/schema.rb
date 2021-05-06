@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 2021_05_10_142002) do
     t.index ["step_id"], name: "index_currency_answers_on_step_id"
   end
 
+  create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "journey_id"
+    t.string "user_id"
+    t.string "contentful_category_id"
+    t.string "contentful_section_id"
+    t.string "contentful_task_id"
+    t.string "contentful_step_id"
+    t.string "action"
+    t.jsonb "data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "journeys", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "category", null: false
     t.datetime "created_at", precision: 6, null: false
