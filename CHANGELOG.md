@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog 1.0.0].
 
 ## [Unreleased]
 
+- steps are listed in the order set in Contentful rather than database insert order
+
 ## [release-012] - 2021-05-11
 
 - sections are listed in the order set in Contentful rather than database insert order
